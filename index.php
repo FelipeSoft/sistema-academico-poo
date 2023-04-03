@@ -19,18 +19,25 @@ if(!isset($_SESSION['logged_person'])){
     <script src="https://use.fontawesome.com/a443ad607e.js"></script>
 </head>
 <body>
-    <!-- <p>
-        <?php
-            //if(isset($_SESSION['logged_person'])){
-            //    echo $_SESSION['logged_person'];
-            //}
-        ?>
-        -
-        <a href="<?=$base_url?>/actions/logout_action.php">Sair</a>
-    </p> -->
+    
     <header>
-        <div class="max-width">
-            <h3>SISTEMA ACADÊMICO</h3>
+        <h3>SISTEMA ACADÊMICO</h3>
+        <div class="profile">
+            <div class="profile-support">
+                <i class="fa fa-user" style="font-size: 25px;"></i>
+                <p>
+                    <?php
+                        if(isset($_SESSION['logged_person'])){
+                            echo $_SESSION['logged_person'];
+                        }
+                    ?>
+                </p>
+                <i class="fa fa-caret-down"></i>
+            </div>
+            <div class="profile-dropdown">
+                <a href="" >Perfil</a>
+                <a href="<?=$base_url?>/actions/logout_action.php" >Sair</a>
+            </div>
         </div>
     </header>
 
@@ -56,5 +63,6 @@ if(!isset($_SESSION['logged_person'])){
         </aside>
     </main>
     <script src="<?=$base_url?>/assets/js/asideToggleAnimation.js"></script>
+    <script src="<?=$base_url?>/assets/js/dropdownAnimation.js"></script>
 </body>
 </html>

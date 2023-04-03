@@ -23,11 +23,11 @@ require("C:/xampp/htdocs/sistema-academico-poo/config.php");
                 <div class="checkbox-area">
                     <label>
                         Aluno
-                        <input type="radio" name="access" id="student" value="0" checked>
+                        <input type="radio" name="access" id="student" value="1" checked>
                     </label>
                     <label>
                         Professor
-                        <input type="radio" name="access" id="teacher" value="1">
+                        <input type="radio" name="access" id="teacher" value="2">
                     </label>
                 </div>
                 <div class="input-area">

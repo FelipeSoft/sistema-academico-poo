@@ -16,10 +16,14 @@ class Auth{
     public function check(){
         $dao = new PersonDataAccessObjectMySql($this->pdo);
         $person = $dao->getPersonByEmail($this->email);
-        $person_access = $dao->getPersonByAccessLevel($this->access);
+        $person_access = $dao->getPersonByAccessLevel($this->email, $this->access);
 
         if($person !== null && $person_access !== null){
-            return password_verify($this->password, $person->getPersonAttribute("password")) ? true : false;
+            if(password_verify($this->password, $person->getPersonAttribute("password"))){
+                return true;
+            } else {
+                return false;
+            }
         }
         return false;
     }

@@ -6,7 +6,7 @@ header{
     color: var(--light-color);
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 0px 30px;
 }
 main{
@@ -66,4 +66,36 @@ div.toggle-item:hover, div.toggle-item:focus{
 div.toggle-area-1,
 div.toggle-area-2{
     display: none;
+}
+div.profile{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    cursor: pointer;
+}
+div.profile-support{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+div.profile-dropdown{
+    position: absolute;
+    top: 70px;
+    background-color: var(--high-color);
+}
+div.profile p{
+    padding: 0px 12px;
+}
+div.profile-dropdown a{
+    display: flex;
+    flex-direction: column;
+    color: var(--light-color);
+    width: inherit;
+    height: inherit;
+    padding: 10px 40px;
+}
+div.profile-dropdown{
+    box-shadow: 5px 5px 15px 0px #3e3e3e;
+    margin-left: 250px;
+    transition: all ease 0.4s;
 }

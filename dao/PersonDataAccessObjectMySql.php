@@ -42,10 +42,11 @@ class PersonDataAccessObjectMySql{
         }
     }
 
-    public function getPersonByAccessLevel(int $access_level){
+    public function getPersonByAccessLevel(string $email, int $access_level){
         try{
-            $sql = $this->pdo->prepare("SELECT * FROM persons WHERE access_level = :access_level");
+            $sql = $this->pdo->prepare("SELECT * FROM persons WHERE access_level = :access_level AND email = :email");
             $sql->bindValue(":access_level", $access_level);
+            $sql->bindValue(":email", $email);
             $sql->execute();
     
             if($sql->rowCount() > 0){
