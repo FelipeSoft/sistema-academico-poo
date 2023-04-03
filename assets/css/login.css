@@ -1,0 +1,88 @@
+@import url('http://localhost/sistema-academico/public/assets/css/index.css');
+
+div.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+div.login-box p.session_message{
+    margin-top: 20px;
+    border: 1px solid  #c3c0c0;
+    padding: 10px;
+    text-align: center;
+}
+
+div.login-box form{
+    height: max-content;
+    width: max-content;
+    border: 1px solid #c3c0c0;
+}
+
+div.login-box-header{
+    background-color: var(--high-color);
+    color: var(--light-color);
+    padding: 20px;
+    border: 1px solid var(--high-color);
+}
+
+div.login-box form{
+    padding: 20px;
+}
+
+div.checkbox-area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.checkbox-area label {
+    margin: 0px 10px; 
+}
+
+div.input-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin: 20px 0px;
+}
+div.input-box input{
+    width: 100%;
+    outline: 0;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 1px solid #c3c0c0;
+}
+div.icon-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin-right: 20px;
+    color: var(--high-color);
+}
+
+div.button-area{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.button-area button{
+    padding: 10px 20px;
+    background-color: var(--high-color);
+    color: var(--light-color);
+    border: none;
+    margin: 20px 0px 10px;
+    width: 100%;
+}
+p.error-message{
+    width: 100%;
+    text-align: right;
+    color: #f00;
+}
