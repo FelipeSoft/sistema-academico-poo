@@ -1,1 +1,69 @@
 @import url('http://localhost/sistema-academico/public/assets/css/index.css');
+header{
+    width: 100%;
+    height: 60px;
+    background-color: var(--high-color);
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 30px;
+}
+main{
+    display: grid;
+    grid-template-columns: 300px 3fr;
+    height: 100%;
+    background-color: #ddd;
+}
+aside{
+    background-color: #fff;
+    height: calc(100vh - 60px);
+    color: var(--dark-color);
+}
+div.sections,
+div.section-item{
+    width: 100%;
+}
+div.section-item,
+div.toggle-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    transition: all ease 0.4s;
+    padding: 15px 30px;
+}
+div.section-item.s3{
+    padding: 0px;
+}
+div.section-item.s3 a{
+    color: var(--dark-color);
+    height: 100%;
+    width: 100%;
+    padding: 15px 30px;
+    transition: all ease 0.4s;
+}
+div.toggle-item a{
+    width: 100%;
+    height: 100%;
+    color: var(--dark-color);
+}
+div.toggle-item{
+    padding: 10px 30px;
+    transition: all ease 0.4s;
+}
+div.section-item:hover, div.section-item:focus,
+div.section-item a:hover, div.section-item a:focus{
+    background-color: #4a09e1;
+    color: var(--light-color);
+    cursor: pointer;
+}
+
+div.toggle-item:hover, div.toggle-item:focus{
+    transform: translateX(9px);
+    cursor: pointer;
+}
+div.toggle-area-1,
+div.toggle-area-2{
+    display: none;
+}
