@@ -28,6 +28,7 @@ if($email && $password && $access){
             $access_level = "Administrador";
         break;
     }
+    
     if($auth->check()){    
         $_SESSION['logged_person'] = $first_name . " | " . $access_level; 
         header("Location:".$base_url."/");

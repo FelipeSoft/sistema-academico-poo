@@ -29,6 +29,10 @@ require("C:/xampp/htdocs/sistema-academico-poo/config.php");
                         Professor
                         <input type="radio" name="access" id="teacher" value="2">
                     </label>
+                    <label>
+                        Administrador
+                        <input type="radio" name="access" id="teacher" value="3">
+                    </label>
                 </div>
                 <div class="input-area">
                     <div class="input-box">

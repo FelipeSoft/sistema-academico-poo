@@ -1,4 +1,4 @@
-@import url('http://localhost/sistema-academico/public/assets/css/index.css');
+@import url('http://localhost/sistema-academico-poo/assets/css/index.css');
 header{
     width: 100%;
     height: 60px;
@@ -13,6 +13,7 @@ main{
     display: grid;
     grid-template-columns: 300px 3fr;
     height: 100%;
+    width: 100%;
     background-color: #ddd;
 }
 aside{

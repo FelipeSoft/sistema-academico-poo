@@ -1,4 +1,4 @@
-@import url('http://localhost/sistema-academico/public/assets/css/index.css');
+@import url('http://localhost/sistema-academico-poo/assets/css/index.css');
 
 div.container{
     display: flex;
@@ -80,6 +80,7 @@ div.button-area button{
     border: none;
     margin: 20px 0px 10px;
     width: 100%;
+    cursor: pointer;
 }
 p.error-message{
     width: 100%;
