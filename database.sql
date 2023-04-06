@@ -1,6 +1,6 @@
 CREATE DATABASE sistema_academico;
 USE sistema_academico;
-CREATE TABLE persons(
+CREATE TABLE users(
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,

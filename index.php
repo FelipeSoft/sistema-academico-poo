@@ -2,7 +2,7 @@
 session_start();
 require("C:/xampp/htdocs/sistema-academico-poo/config.php");
 
-if(!isset($_SESSION['logged_person'])){
+if(!isset($_SESSION['logged_user'])){
     header("Location:" . $base_url . "/login.php");
     exit;
 }
@@ -11,8 +11,8 @@ if(!isset($_SESSION['logged_person'])){
 
 <main>
     <?php 
-        if(isset($_SESSION['logged_person'])){
-            $access_level = explode(" ", $_SESSION['logged_person'])[2];
+        if(isset($_SESSION['logged_user'])){
+            $access_level = explode(" ", $_SESSION['logged_user'])[2];
             if($access_level === "Professor"){
                 require("C:/xampp/htdocs/sistema-academico-poo/components/asideTeacher.php");
             } else if($access_level === "Aluno"){

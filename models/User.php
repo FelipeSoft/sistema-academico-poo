@@ -1,5 +1,8 @@
 <?php
-class Person{
+/**
+ * Summary of User
+ */
+class User{
     private int $id;
     private string $name;
     private string $email;
@@ -10,7 +13,7 @@ class Person{
     private string $rg;
     private int $access_level;
 
-    public function setPersonAttribute(array $information){
+    public function setUserAttribute(array $information){
         if($information["id"] !== 0){
             $this->id = $information["id"];
         }
@@ -23,7 +26,7 @@ class Person{
         $this->access_level = $information["access_level"];
     }
 
-    public function getPersonAttribute(string $attribute){
+    public function getUserAttribute(string $attribute){
         return $this->$attribute;
     }
 }

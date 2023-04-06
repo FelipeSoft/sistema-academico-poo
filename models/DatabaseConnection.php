@@ -17,7 +17,7 @@ class DatabaseConnection{
             $pdo = new PDO("mysql:dbname=" . $this->db_name . ";host=" . $this->db_host, $this->db_user, $this->db_password);
             return $pdo;
         } catch (PDOException $error) {
-            $error->getMessage();
+            echo "Error: " . $error->getMessage();
         }
     }
 }

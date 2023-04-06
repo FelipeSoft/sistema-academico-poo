@@ -2,8 +2,9 @@
 session_start();
 
 require("C:/xampp/htdocs/sistema-academico-poo/config.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/models/User.php");
 require_once("C:/xampp/htdocs/sistema-academico-poo/models/Auth.php");
-require_once("C:/xampp/htdocs/sistema-academico-poo/dao/PersonDataAccessObjectMySql.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/dao/UserDataAccessObjectMySql.php");
 
 $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -11,10 +12,14 @@ $access = filter_input(INPUT_POST, 'access', FILTER_SANITIZE_SPECIAL_CHARS);
 
 if($email && $password && $access){
     $auth = new Auth($connection, $email, $password, $access);
-    $dao = new PersonDataAccessObjectMySql($connection);
+    $dao = new UserDataAccessObjectMySql($connection);
 
-    $logged_person = $dao->getPersonByEmail($email);
-    $first_name = explode(" ", $logged_person->getPersonAttribute("name"))[0];
+    $logged_user = $dao->getUserByAuthorization($email, $access);
+    
+    if($logged_user !== null){
+        $first_name = explode(" ", $logged_user->getUserAttribute("name"))[0];
+    }
+
     $access_level = "";
 
     switch($access){
@@ -30,7 +35,7 @@ if($email && $password && $access){
     }
     
     if($auth->check()){    
-        $_SESSION['logged_person'] = $first_name . " | " . $access_level; 
+        $_SESSION['logged_user'] = $first_name . " | " . $access_level; 
         header("Location:".$base_url."/");
         exit;
     }

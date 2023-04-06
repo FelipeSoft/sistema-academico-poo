@@ -17,8 +17,8 @@
                 <i class="fa fa-user" style="font-size: 25px;"></i>
                 <p>
                     <?php
-                        if(isset($_SESSION['logged_person'])){
-                            echo $_SESSION['logged_person'];
+                        if(isset($_SESSION['logged_user'])){
+                            echo $_SESSION['logged_user'];
                         }
                     ?>
                 </p>

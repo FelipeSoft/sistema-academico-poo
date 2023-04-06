@@ -1,6 +1,6 @@
 <?php
-require_once("C:/xampp/htdocs/sistema-academico-poo/models/Person.php");
-require_once("C:/xampp/htdocs/sistema-academico-poo/dao/PersonDataAccessObjectMySql.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/models/User.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/dao/UserDataAccessObjectMySql.php");
 class Auth{
     private PDO $pdo;
     private string $email;
@@ -14,16 +14,11 @@ class Auth{
     }
 
     public function check(){
-        $dao = new PersonDataAccessObjectMySql($this->pdo);
-        $person = $dao->getPersonByEmail($this->email);
-        $person_access = $dao->getPersonByAccessLevel($this->email, $this->access);
+        $dao = new UserDataAccessObjectMySql($this->pdo);
+        $user_access = $dao->getUserByAuthorization($this->email, $this->access);
 
-        if($person !== null && $person_access !== null){
-            if(password_verify($this->password, $person->getPersonAttribute("password"))){
-                return true;
-            } else {
-                return false;
-            }
+        if($user_access !== null){
+            return (password_verify($this->password, $user_access->getUserAttribute("password"))) ? true : false;  
         }
         return false;
     }
