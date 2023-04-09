@@ -9,6 +9,9 @@ header{
     justify-content: space-between;
     padding: 0px 30px;
 }
+header a {
+    color: var(--light-color);
+}
 main{
     display: grid;
     grid-template-columns: 300px 3fr;

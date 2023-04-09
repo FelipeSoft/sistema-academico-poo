@@ -1,0 +1,25 @@
+@import url("http://localhost/sistema-academico-poo/assets/css/index.css");
+
+div.container{
+    padding: 40px;
+}
+
+form label,
+form label input{
+    width: 100%;
+}
+form label{
+    margin-top: 20px;
+}
+form label input{
+    padding: 10px 20px;
+}
+div.student-area{
+    display: flex;
+    gap: 40px;
+}
+div.personal-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

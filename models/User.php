@@ -1,16 +1,9 @@
 <?php
-/**
- * Summary of User
- */
 class User{
     private int $id;
     private string $name;
     private string $email;
     private string $password;
-
-    private string $born_date;
-    private string $cpf;
-    private string $rg;
     private int $access_level;
 
     public function setUserAttribute(array $information){
@@ -20,9 +13,6 @@ class User{
         $this->name = $information["name"];
         $this->email = $information["email"];
         $this->password = $information["password"];
-        $this->born_date = $information["born_date"];
-        $this->cpf = $information["cpf"];
-        $this->rg = $information["rg"];
         $this->access_level = $information["access_level"];
     }
 
