@@ -2,24 +2,54 @@
 
 div.container{
     padding: 40px;
+    height: 100%;
 }
-
+h2.main-title{
+    margin-bottom: 20px;
+}
 form label,
-form label input{
+form label input,
+form label select{
     width: 100%;
 }
-form label{
-    margin-top: 20px;
-}
-form label input{
+form label input,
+form label select{
     padding: 10px 20px;
-}
-div.student-area{
-    display: flex;
-    gap: 40px;
+    margin-bottom: 20px;
+    outline: 0;
+    border: 1px solid var(--light-color);
 }
 div.personal-info{
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+div.student-area,
+div.guardian-area{
+    display: flex;
+    gap: 40px;
+}
+form label input:focus,
+form label select:focus{
+    border: 1px solid var(--high-color);
+}
+div.button-area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+div.button-area button{
+    background-color: var(--high-color);
+    border: none;
+    color: var(--light-color);
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all ease 0.4s; 
+    margin-top: 30px;
+}
+
+div.button-area button:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px 0px #9b9b9b;
 }

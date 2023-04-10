@@ -21,7 +21,7 @@ main{
 }
 aside{
     background-color: #fff;
-    height: calc(100vh - 60px);
+    height: 100%;
     color: var(--dark-color);
 }
 div.sections,
@@ -102,4 +102,46 @@ div.profile-dropdown{
     box-shadow: 5px 5px 15px 0px #3e3e3e;
     margin-left: 400px;
     transition: all ease 0.4s;
+}
+
+div.container.container-home{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+div.container.container-home div.home-buttons,
+div.container.container-home, div.container-courses{
+    gap: 40px;
+}
+div.container.container-home div.home-buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 200px);
+}
+div.container.container-home div.home-buttons div.home-option{
+    background-color: var(--high-color);
+    color: var(--light-color);
+}
+div.average-graphic, div.home-option, div.courses-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.average-graphic,
+div.courses-item{
+    background-color: #fff;
+    height: 100%;
+}
+div.courses{
+    grid-row: 3 / 4;
+    grid-column: 1 / 3;
+}
+div.courses h3{
+    margin-bottom: 20px;
+}
+div.container-courses{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+div.courses-item{
+    height: 300px;
 }
