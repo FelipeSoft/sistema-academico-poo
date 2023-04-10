@@ -1,5 +1,5 @@
 <?php
-class Guardin{
+class Guardian{
     private int $id;
     private string $name;
     private string $email;
@@ -8,7 +8,7 @@ class Guardin{
     private string $born_date;
     private string $rg;
     private string $cpf;
-    private int $student_id;
+    private float $payment;
 
     public function setGuardinAttribute(array $information){
         if($information["id"] !== 0){
@@ -23,6 +23,6 @@ class Guardin{
         $this->born_date = $information['born_date'];
         $this->rg = $information['rg'];
         $this->cpf = $information['cpf'];
-        $this->student_id = $information['student_id'];
+        $this->payment = $information['payment'];
     }
 }
