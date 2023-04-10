@@ -37,7 +37,7 @@ form label select:focus{
 div.button-area{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 div.button-area button{
     background-color: var(--high-color);
@@ -47,9 +47,11 @@ div.button-area button{
     cursor: pointer;
     transition: all ease 0.4s; 
     margin-top: 30px;
+    outline: 0;
 }
 
-div.button-area button:hover{
+div.button-area button:hover,
+div.button-area button:focus{
     transform: translateY(-10px);
     box-shadow: 0px 15px 30px 0px #9b9b9b;
 }
