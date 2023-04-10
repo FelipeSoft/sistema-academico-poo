@@ -9,14 +9,14 @@ class UserDataAccessObjectMySql{
     public function create(User $user){
         try{
             $sql = $this->pdo->prepare("INSERT INTO users (name, email, password, access_level) 
-            VALUES (:name, :email, :password, :born_date, :cpf, :rg, :access_level)");
+            VALUES (:name, :email, :password, :access_level)");
             $sql->bindValue(":name", $user->getUserAttribute("name"));
             $sql->bindValue(":email", $user->getUserAttribute("email"));
             $sql->bindValue(":password", password_hash($user->getUserAttribute("password"), PASSWORD_DEFAULT));
             $sql->bindValue(":access_level", $user->getUserAttribute("access_level"));
             $sql->execute();
         } catch(PDOException $error) {
-            $error->getMessage();
+            echo $error->getMessage();
         }
     }
 
