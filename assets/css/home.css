@@ -17,7 +17,7 @@ main{
     grid-template-columns: 300px 3fr;
     height: 100%;
     width: 100%;
-    background-color: #ddd;
+    background-color: #dedede;
 }
 aside{
     background-color: #fff;

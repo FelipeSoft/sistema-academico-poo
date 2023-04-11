@@ -8,7 +8,7 @@ class Student{
     private string $cpf;
     private string $grade;
     private string $schooling;
-    private int $guardian_id;
+    private int $rm;
 
     public function setStudentAttribute(array $information){
         if($information["id"] !== 0){
@@ -22,7 +22,7 @@ class Student{
         $this->cpf = $information['cpf'];
         $this->grade = $information['grade'];
         $this->schooling = $information['schooling'];
-        $this->guardian_id = $information['guardian_id'];
+        $this->rm = $information['rm'];
     }
 
     public function getStudentAttribute(string $attribute){

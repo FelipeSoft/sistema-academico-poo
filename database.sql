@@ -28,8 +28,5 @@ CREATE TABLE students(
     `cpf` CHAR(11) NOT NULL,
     `rg` VARCHAR(9) NOT NULL,
     `grade` INT NOT NULL,
-    `guardian_id` INT,
-    CONSTRAINT fk_students_guardian_id
-    FOREIGN KEY (guardian_id)
-    REFERENCES guardians (id)
+    `rm` INT NOT NULL
 );

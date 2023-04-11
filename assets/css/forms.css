@@ -46,7 +46,7 @@ div.button-area button{
     padding: 15px 30px;
     cursor: pointer;
     transition: all ease 0.4s; 
-    margin-top: 30px;
+    margin: 20px 0px 30px;
     outline: 0;
 }
 
