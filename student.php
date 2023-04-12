@@ -8,6 +8,7 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
     <?php require("C:/xampp/htdocs/sistema-academico-poo/components/asideAdministrator.php") ?>
     <div class="container">
         <h2 class="main-title">Novo Cadastro</h2>
+        
         <form action="<?=$base_url?>/actions/student_action.php" method="POST">
                 <h3>Área do Estudante</h3>
                 <div class="student-area">
@@ -62,7 +63,11 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                         </label>  
                     </div>
                 </div>
-    
+                <div class="button-area">
+                    <button>Cadastrar Estudante</button>
+                    </div>
+                </form>
+                <form action="<?=$base_url?>/actions/guardian_action.php" method="POST">
                 <h3>Área do Responsável</h3>
                     <div class="guardian-area">
                         <div class="column-left-ga">
@@ -89,17 +94,21 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                         </div>
                         <div class="column-right-ga">
                             <label>
-                            Telefone:
+                                Telefone:
                             <input type="text">
                             </label>
                             <label>
                                 Celular:
                                 <input type="text">
                             </label>
+                            <label>
+                                Registro de Matrícula:
+                                <input type="text">
+                            </label>
                         </div>
                     </div>
                     <div class="button-area">
-                    <button>Cadastrar</button>
+                        <button>Cadastrar Responsável</button>
                     </div>
                 </form>
     </div>
