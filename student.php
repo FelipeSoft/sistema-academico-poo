@@ -31,6 +31,18 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                     </div>
                     <div class="column-right-sa">
                         <label>
+                            Sexo:
+                            <select name="gender">
+                                <option value="1">Masculino</option>
+                                <option value="2">Feminino</option>
+                                <option value="3">Prefiro não dizer</option>
+                            </select>
+                        </label>    
+                        <label>
+                            Ano:
+                            <input type="text">
+                        </label>
+                        <label>
                             Escolaridade:
                             <select name="schooling">
                                 <option value="1">Ensino Fundamental I</option>
@@ -40,9 +52,14 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                             </select>
                         </label>    
                         <label>
-                            Série/Turma:
-                            <input type="text">
-                        </label>
+                            Período:
+                            <select name="period">
+                                <option value="1">Matutino</option>
+                                <option value="2">Vespertino</option>
+                                <option value="3">Noturno</option>
+                                <option value="4">Integral</option>
+                            </select>
+                        </label>  
                     </div>
                 </div>
     
