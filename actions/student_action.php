@@ -11,7 +11,7 @@ $cpf = filter_input(INPUT_POST, "cpf", FILTER_SANITIZE_SPECIAL_CHARS);
 $grade = filter_input(INPUT_POST, "grade", FILTER_SANITIZE_SPECIAL_CHARS);
 $schooling = filter_input(INPUT_POST, "schooling", FILTER_SANITIZE_SPECIAL_CHARS);
 
-// if($name && $email && $born_date && $rg && $cpf && $grade && $schooling){
+if($name && $email && $born_date && $rg && $cpf && $grade && $schooling){
     $enrollment_register = null;
     for($i = 0; $i <= 4; $i++){
         $enrollment_register .= rand(0, 9);
@@ -24,7 +24,25 @@ $schooling = filter_input(INPUT_POST, "schooling", FILTER_SANITIZE_SPECIAL_CHARS
             }
         }
     }
-    echo $enrollment_register;
-// }
+    $student = new Student();
+    $student->setStudentAttribute([
+        "id" => 0,
+        "name" => $name,
+        "email" => $email,
+        "born_date" => $born_date,
+        "rg" => $rg,
+        "cpf" => $cpf,
+        "grade" => $grade,
+        "schooling" => $schooling,
+        "rm" => $enrollment_register,
+    ]);
+    $dao->create($student);
 
+    $_SESSION["flash_session"] = "O registro de matrícula do aluno cadastro é: " . $enrollment_register;
+    header("Location:$base_url/student.php");
+    exit;
+}
+$_SESSION["flash_session"] = "Preencha todos os campos corretamente!";
+header("Location:$base_url/student.php");
+exit;
 

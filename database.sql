@@ -16,8 +16,8 @@ CREATE TABLE guardians(
     `cellphone` VARCHAR(20) NOT NULL,
     `tellphone` VARCHAR(20) NULL,
     `born_date` VARCHAR(10) NOT NULL,
-    `cpf` CHAR(11) NOT NULL,
-    `rg` VARCHAR(9) NOT NULL,
+    `cpf` VARCHAR(20) NOT NULL,
+    `rg` VARCHAR(20) NOT NULL,
     `payment` FLOAT NOT NULL
 );
 
