@@ -1,18 +1,21 @@
 <?php
+session_start();
+
 require("C:/xampp/htdocs/sistema-academico-poo/config.php");
 require_once("C:/xampp/htdocs/sistema-academico-poo/models/Student.php");
 require_once("C:/xampp/htdocs/sistema-academico-poo/dao/StudentDataAccessObjectMySql.php");
 
-$name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS);
-$email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS);
-$born_date = filter_input(INPUT_POST, "born_date", FILTER_SANITIZE_SPECIAL_CHARS);
-$rg = filter_input(INPUT_POST, "rg", FILTER_SANITIZE_SPECIAL_CHARS);
-$cpf = filter_input(INPUT_POST, "cpf", FILTER_SANITIZE_SPECIAL_CHARS);
-$grade = filter_input(INPUT_POST, "grade", FILTER_SANITIZE_SPECIAL_CHARS);
-$schooling = filter_input(INPUT_POST, "schooling", FILTER_SANITIZE_SPECIAL_CHARS);
+$name = filter_input(INPUT_POST, "studentName", FILTER_SANITIZE_SPECIAL_CHARS);
+$born_date = filter_input(INPUT_POST, "studentBornDate", FILTER_SANITIZE_SPECIAL_CHARS);
+$rg = filter_input(INPUT_POST, "studentRG", FILTER_SANITIZE_SPECIAL_CHARS);
+$cpf = filter_input(INPUT_POST, "studentCPF", FILTER_SANITIZE_SPECIAL_CHARS);
+$grade = filter_input(INPUT_POST, "studentGrade", FILTER_SANITIZE_SPECIAL_CHARS);
+$schooling = filter_input(INPUT_POST, "studentSchooling", FILTER_SANITIZE_SPECIAL_CHARS);
+$period = filter_input(INPUT_POST, "studentPeriod", FILTER_SANITIZE_SPECIAL_CHARS);
 
-if($name && $email && $born_date && $rg && $cpf && $grade && $schooling){
+if($name && $born_date && $rg && $cpf && $grade && $schooling && $period){
     $enrollment_register = null;
+
     for($i = 0; $i <= 4; $i++){
         $enrollment_register .= rand(0, 9);
     }
@@ -25,6 +28,7 @@ if($name && $email && $born_date && $rg && $cpf && $grade && $schooling){
         }
     }
     $student = new Student();
+    $email = $student->generateStudentEmail($name);
     $student->setStudentAttribute([
         "id" => 0,
         "name" => $name,
@@ -34,6 +38,7 @@ if($name && $email && $born_date && $rg && $cpf && $grade && $schooling){
         "cpf" => $cpf,
         "grade" => $grade,
         "schooling" => $schooling,
+        "period" => $period,
         "rm" => $enrollment_register,
     ]);
     $dao->create($student);

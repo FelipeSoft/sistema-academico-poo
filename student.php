@@ -7,6 +7,12 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
 <main>
     <?php require("C:/xampp/htdocs/sistema-academico-poo/components/asideAdministrator.php") ?>
     <div class="container">
+        <?php
+            if(isset($_SESSION['flash_session'])){
+                require_once("C:/xampp/htdocs/sistema-academico-poo/components/message.php");
+            }
+            unset($_SESSION['flash_session']);
+        ?>
         <h2 class="main-title">Novo Cadastro</h2>
         
         <form action="<?=$base_url?>/actions/student_action.php" method="POST">
@@ -15,25 +21,25 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                     <div class="column-left-sa">
                         <label>
                         Nome:
-                        <input type="text">
+                        <input type="text" name="studentName">
                         </label>
                         <label>
                             Data de Nascimento:
-                            <input type="date">
+                            <input type="date" name="studentBornDate">
                         </label>
                         <label>
                             RG:
-                            <input type="text">
+                            <input type="text" name="studentRG">
                         </label>
                         <label>
                             CPF:
-                            <input type="text">
+                            <input type="text" name="studentCPF">
                         </label>
                     </div>
                     <div class="column-right-sa">
                         <label>
                             Sexo:
-                            <select name="gender">
+                            <select name="studentGender">
                                 <option value="1">Masculino</option>
                                 <option value="2">Feminino</option>
                                 <option value="3">Prefiro não dizer</option>
@@ -41,11 +47,11 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                         </label>    
                         <label>
                             Ano:
-                            <input type="text">
+                            <input type="text" name="studentGrade">
                         </label>
                         <label>
                             Escolaridade:
-                            <select name="schooling">
+                            <select name="studentSchooling">
                                 <option value="1">Ensino Fundamental I</option>
                                 <option value="2">Ensino Fundamental II</option>
                                 <option value="3">Ensino Médio</option>
@@ -54,7 +60,7 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                         </label>    
                         <label>
                             Período:
-                            <select name="period">
+                            <select name="studentPeriod">
                                 <option value="1">Matutino</option>
                                 <option value="2">Vespertino</option>
                                 <option value="3">Noturno</option>
@@ -73,37 +79,37 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                         <div class="column-left-ga">
                             <label>
                             Nome:
-                            <input type="text">
+                            <input type="text" name="guardianName">
                             </label>
                             <label>
                                 Email:
-                                <input type="text">
+                                <input type="text" name="guardianEmail">
                             </label>
                             <label>
                                 Data de Nascimento:
-                                <input type="date">
+                                <input type="date" name="guardianBornDate">
                             </label>
                             <label>
                                 RG:
-                                <input type="text">
+                                <input type="text" name="guardianRG">
                             </label>
                             <label>
                                 CPF:
-                                <input type="text">
+                                <input type="text" name="guardianCPF">
                             </label>
                         </div>
                         <div class="column-right-ga">
                             <label>
                                 Telefone:
-                            <input type="text">
+                            <input type="text" name="guardianTellphone">
                             </label>
                             <label>
                                 Celular:
-                                <input type="text">
+                                <input type="text" name="guardianCellphone">
                             </label>
                             <label>
                                 Registro de Matrícula:
-                                <input type="text">
+                                <input type="text" name="rm">
                             </label>
                         </div>
                     </div>

@@ -17,6 +17,7 @@ class UserDataAccessObjectMySql{
             $sql->execute();
         } catch(PDOException $error) {
             echo $error->getMessage();
+            exit;
         }
     }
 
@@ -37,6 +38,7 @@ class UserDataAccessObjectMySql{
             return null;
         } catch(PDOException $error){
             echo "Error: " . $error->getMessage();
+            exit;
         }
     }
 }

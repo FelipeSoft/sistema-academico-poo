@@ -145,3 +145,11 @@ div.container-courses{
 div.courses-item{
     height: 300px;
 }
+div.message{
+    width: 100%;
+    height: max-content;
+    padding: 10px 20px;
+    background-color: var(--high-color);
+    color: #fff;
+    margin-bottom: 20px;
+}

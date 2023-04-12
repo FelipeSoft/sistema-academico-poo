@@ -25,8 +25,11 @@ CREATE TABLE students(
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255) NOT NULL,
-    `cpf` CHAR(11) NOT NULL,
-    `rg` VARCHAR(9) NOT NULL,
+    `born_date` VARCHAR(10) NOT NULL,
+    `cpf` VARCHAR(20) NOT NULL,
+    `rg` VARCHAR(20) NOT NULL,
+    `schooling` VARCHAR(30) NOT NULL,
+    `period` VARCHAR(20) NOT NULL,
     `grade` INT NOT NULL,
     `rm` INT NOT NULL
 );
