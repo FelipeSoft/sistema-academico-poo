@@ -7,13 +7,19 @@ div.container{
 h2.main-title{
     margin-bottom: 20px;
 }
+textarea{
+    resize: none;
+    height: 100%;
+}
 form label,
 form label input,
-form label select{
+form label select,
+form label textarea{
     width: 100%;
 }
 form label input,
-form label select{
+form label select,
+form label textarea{
     padding: 10px 20px;
     margin-bottom: 20px;
     outline: 0;

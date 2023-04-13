@@ -153,3 +153,17 @@ div.message{
     color: #fff;
     margin-bottom: 20px;
 }
+table#usersTable{
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table#usersTable thead tr td{
+    background-color: var(--high-color);
+    color: #fff;
+}
+table#usersTable thead tr td,
+table#usersTable tbody tr td{
+    border: 1px solid var(--dark-color);
+    padding: 7px 14px;
+    text-align: center;
+}

@@ -4,7 +4,7 @@ require("C:/xampp/htdocs/sistema-academico-poo/models/DatabaseConnection.php");
 $DB_NAME = "sistema_academico";
 $DB_HOST = "localhost";
 $DB_USER = "root";
-$DB_PASSWORD = "root";
+$DB_PASSWORD = "aluno123";
 
 $database_connection = new DatabaseConnection($DB_NAME, $DB_HOST, $DB_USER, $DB_PASSWORD);
 $connection = $database_connection->connect();

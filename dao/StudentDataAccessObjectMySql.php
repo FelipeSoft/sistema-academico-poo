@@ -37,27 +37,32 @@ class StudentDataAccessObjectMySql{
         }
     }
     public function getStudentByEnrollmentRegister(int $enrollment_register){
-        $sql = $this->pdo->prepare("SELECT * FROM students WHERE rm = :rm");
-        $sql->bindValue(":rm", $enrollment_register);
-        $sql->execute();
+        try{
+            $sql = $this->pdo->prepare("SELECT * FROM students WHERE rm = :rm");
+            $sql->bindValue(":rm", $enrollment_register);
+            $sql->execute();
 
-        if($sql->rowCount() > 0){
-            $data = $sql->fetch(PDO::FETCH_ASSOC);
-            $student = new Student();
-            $student->setStudentAttribute([
-                "id" => $data["id"],
-                "name" => $data["name"],
-                "email" => $data["email"],
-                "rg" => $data["rg"],
-                "cpf" => $data["cpf"],
-                "born_date" => $data["born_date"],
-                "grade" => $data["grade"],
-                "schooling" => $data["schooling"],
-                "period" => $data["period"],
-                "rm" => $data["rm"],
-            ]);
-            return $student;
+            if($sql->rowCount() > 0){
+                $data = $sql->fetch(PDO::FETCH_ASSOC);
+                $student = new Student();
+                $student->setStudentAttribute([
+                    "id" => $data["id"],
+                    "name" => $data["name"],
+                    "email" => $data["email"],
+                    "rg" => $data["rg"],
+                    "cpf" => $data["cpf"],
+                    "born_date" => $data["born_date"],
+                    "grade" => $data["grade"],
+                    "schooling" => $data["schooling"],
+                    "period" => $data["period"],
+                    "rm" => $data["rm"],
+                ]);
+                return $student;
+            }
+            return null;
+        } catch (PDOException $error){
+            echo $error->getMessage();
+            exit;
         }
-        return null;
     }
 }

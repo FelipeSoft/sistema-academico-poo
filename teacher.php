@@ -14,22 +14,26 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                     <div class="column-left-sa">
                         <label>
                         Nome:
-                        <input type="text">
+                        <input type="text" name="teacherName">
                         </label>
                         <label>
                             Data de Nascimento:
-                            <input type="date">
+                            <input type="date" name="teacherBornDate">
                         </label>
                         <label>
                             RG:
-                            <input type="text">
+                            <input type="text" name="teacher">
                         </label>
                         <label>
                             CPF:
-                            <input type="text">
+                            <input type="text" name="">
+                        </label>
+                        <label>
+                            Salário
+                            <input type="text" name="">
                         </label>
                     </div>
-                    <div class="column-right-sa">
+                    <div class="column-right-sa" name="">
                         <label>
                             Escolaridade:
                             <select name="schooling">
@@ -40,8 +44,8 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                             </select>
                         </label>    
                         <label>
-                            Série/Turma:
-                            <input type="text">
+                            Formação Acadêmica
+                            <textarea name="academic_education"></textarea>
                         </label>
                     </div>
                 </div> 

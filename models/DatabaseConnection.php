@@ -18,6 +18,7 @@ class DatabaseConnection{
             return $pdo;
         } catch (PDOException $error) {
             echo "Error: " . $error->getMessage();
+            exit;
         }
     }
 }

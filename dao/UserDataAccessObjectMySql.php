@@ -41,4 +41,32 @@ class UserDataAccessObjectMySql{
             exit;
         }
     }
+
+    public function all(){
+        $users = null;
+        try{
+            $sql = $this->pdo->prepare("SELECT * FROM users");
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+                foreach($sql as $data){
+                    $user = new User();
+                    $user->setUserAttribute([
+                        "id" => $data["id"],
+                        "name" => $data["name"],
+                        "email" => $data["email"],
+                        "password" => $data["password"],
+                        "access_level" => $data["access_level"],
+                    ]);
+    
+                    $users[] = $user;
+                }
+                return $users;
+            }
+
+        } catch(PDOException $error){
+            echo $error->getMessage();
+            die;
+        }
+    }
 }
