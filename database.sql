@@ -9,18 +9,6 @@ CREATE TABLE users(
     `access_level` INT NOT NULL
 );
 
-CREATE TABLE guardians(
-    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(255) NOT NULL,
-    `email` VARCHAR(255) NOT NULL,
-    `cellphone` VARCHAR(20) NOT NULL,
-    `tellphone` VARCHAR(20) NULL,
-    `born_date` VARCHAR(10) NOT NULL,
-    `cpf` VARCHAR(20) NOT NULL,
-    `rg` VARCHAR(20) NOT NULL,
-    `payment` FLOAT NOT NULL
-);
-
 CREATE TABLE students(
     `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
@@ -33,3 +21,22 @@ CREATE TABLE students(
     `grade` INT NOT NULL,
     `rm` INT NOT NULL
 );
+
+
+CREATE TABLE guardians(
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `cellphone` VARCHAR(20) NOT NULL,
+    `tellphone` VARCHAR(20) NULL,
+    `born_date` VARCHAR(10) NOT NULL,
+    `cpf` VARCHAR(20) NOT NULL,
+    `rg` VARCHAR(20) NOT NULL,
+    `frequency` INT NOT NULL,
+    `payment` FLOAT NOT NULL,
+    `student_id` INT NOT NULL,
+    CONSTRAINT fk_guardians_student_id
+    FOREIGN KEY (student_id)
+    REFERENCES students (id)
+);
+

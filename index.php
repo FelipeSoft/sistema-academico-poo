@@ -2,7 +2,7 @@
 session_start();
 require("C:/xampp/htdocs/sistema-academico-poo/config.php");
 
-if(!isset($_SESSION['logged_user'])){
+if(!isset($_SESSION['logged_user']) || $_SESSION['logged_user'] === null){
     header("Location:" . $base_url . "/login.php");
     exit;
 }

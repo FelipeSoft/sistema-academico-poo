@@ -15,7 +15,7 @@
             <div class="toggle-item"><a href="">Mensagens</a></div>
             <div class="toggle-item"><a href="">Quadro de Horários</a></div>
         </div>
-        <div class="section-item s3"><a href="">Usuários</a></div>
+        <div class="section-item s3"><a href="users.php">Usuários</a></div>
         <div class="section-item s3"><a href="">Dashboard</a></div>
     </div>
 </aside>

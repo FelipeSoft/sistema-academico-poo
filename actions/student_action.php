@@ -43,7 +43,7 @@ if($name && $born_date && $rg && $cpf && $grade && $schooling && $period){
     ]);
     $dao->create($student);
 
-    $_SESSION["flash_session"] = "O registro de matrícula do aluno cadastro é: " . $enrollment_register;
+    $_SESSION["flash_session"] = "O registro de matrícula do aluno cadastrado é: " . $enrollment_register;
     header("Location:$base_url/student.php");
     exit;
 }

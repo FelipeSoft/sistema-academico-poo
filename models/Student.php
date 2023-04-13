@@ -46,13 +46,12 @@ class Student{
                 $new_array[] = strtolower($element);
             }
         }
-        
-        for($i = 0; $i < 2; $i++){
+        for($i = 0; $i < count($new_array); $i++){
             $random_element = rand(0, 2);
             $chosen_names[] = $new_array[$random_element];
         }
 
-        $email = $chosen_names[0] . "." . $chosen_names[1] . $random_number . "@school.com";
+        $email = $new_array[0] . "." . $chosen_names[1] . $random_number . "@school.com";
         return $email;
     }
 }

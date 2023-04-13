@@ -108,6 +108,19 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                                 <input type="text" name="guardianCellphone">
                             </label>
                             <label>
+                                Frequência do Pagamento:
+                                <select name="frequency">
+                                    <option value="1">Mensal</option>
+                                    <option value="2">Trimestral</option>
+                                    <option value="3">Semestral</option>
+                                    <option value="4">Anual</option>
+                                </select>
+                            </label>
+                            <label>
+                                Valor do Pagamento:
+                                <input type="number     " name="payment">
+                            </label>
+                            <label>
                                 Registro de Matrícula:
                                 <input type="text" name="rm">
                             </label>
