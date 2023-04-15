@@ -8,7 +8,7 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
     <?php require("C:/xampp/htdocs/sistema-academico-poo/components/asideAdministrator.php") ?>
     <div class="container">
         <h2 class="main-title">Novo Cadastro</h2>
-        <form action="<?=$base_url?>/actions/student_action.php" method="POST">
+        <form action="<?=$base_url?>/actions/teacher_action.php" method="POST">
                 <h3>Área do Professor</h3>
                 <div class="student-area">
                     <div class="column-left-sa">

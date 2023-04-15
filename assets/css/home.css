@@ -37,10 +37,12 @@ div.toggle-item{
     transition: all ease 0.4s;
     padding: 15px 30px;
 }
-div.section-item.s3{
+div.section-item.s3,
+div.section-item.s4{
     padding: 0px;
 }
-div.section-item.s3 a{
+div.section-item.s3 a,
+div.section-item.s4 a{
     color: var(--dark-color);
     height: 100%;
     width: 100%;
@@ -68,7 +70,8 @@ div.toggle-item:hover, div.toggle-item:focus{
     cursor: pointer;
 }
 div.toggle-area-1,
-div.toggle-area-2{
+div.toggle-area-2,
+div.toggle-area-5{
     display: none;
 }
 div.profile{
@@ -156,14 +159,18 @@ div.message{
 table#usersTable{
     border-collapse: collapse;
     margin-top: 20px;
+    width: max-content;
 }
 table#usersTable thead tr td{
     background-color: var(--high-color);
     color: #fff;
 }
+table#usersTable thead tr td{
+    width: max-content;
+}
 table#usersTable thead tr td,
 table#usersTable tbody tr td{
     border: 1px solid var(--dark-color);
-    padding: 7px 14px;
     text-align: center;
+    padding: 7px 14px;
 }

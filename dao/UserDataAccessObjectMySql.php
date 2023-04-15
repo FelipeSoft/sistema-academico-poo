@@ -62,6 +62,8 @@ class UserDataAccessObjectMySql{
                     $users[] = $user;
                 }
                 return $users;
+            } else {
+                return null;
             }
 
         } catch(PDOException $error){

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?=$base_url?>/assets/css/home.css">
     <link rel="stylesheet" href="<?=$base_url?>/assets/css/forms.css">
+    <link rel="stylesheet" href="<?=$base_url?>/assets/css/index.css">
     <script src="https://use.fontawesome.com/a443ad607e.js"></script>
 </head>
 <body>

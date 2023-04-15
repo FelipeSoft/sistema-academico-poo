@@ -19,12 +19,14 @@
 }
 body, html{
     width: 100vw;
-    overflow-x: hidden;
     height: max-content;
+    overflow-x: hidden;
 }
 div.container{
     width: 100%;
-    height: max-content;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 ::-webkit-scrollbar{
     width: 10px;
@@ -34,4 +36,19 @@ div.container{
 
 ::-webkit-scrollbar-thumb{
     background-color: var(--high-color);
+}
+div.table
+{
+    width: max-content;
+}
+div.table-head{
+    width: 100%;
+}
+div.table-row{
+    display: flex;
+    align-items: center;
+}
+div.table-row div.table-cell{
+    width: max-content;
+    padding: 10px 20px;
 }
