@@ -17,7 +17,7 @@
         </div>
         <div class="section-item s5">Gerenciamento <i class="fa fa-caret-down"></i></div>
         <div class="toggle-area-5">
-            <div class="toggle-item"><a href="">Alunos</a></div>
+            <div class="toggle-item"><a href="students.php">Alunos</a></div>
             <div class="toggle-item"><a href="">Responsáveis</a></div>
             <div class="toggle-item"><a href="">Administradores</a></div>
         </div>

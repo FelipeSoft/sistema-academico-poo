@@ -37,18 +37,15 @@ div.container{
 ::-webkit-scrollbar-thumb{
     background-color: var(--high-color);
 }
-div.table
-{
-    width: max-content;
-}
-div.table-head{
-    width: 100%;
-}
-div.table-row{
+div.actions{
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
-div.table-row div.table-cell{
-    width: max-content;
-    padding: 10px 20px;
+div.info-message{
+    width: 100%;
+    height: max-content;
+    background-color: var(--high-color);
+    color: var(--light-color);
+    padding: 20px;
 }

@@ -3,7 +3,9 @@ session_start();
 
 require("C:/xampp/htdocs/sistema-academico-poo/config.php");
 require_once("C:/xampp/htdocs/sistema-academico-poo/models/Student.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/models/User.php");
 require_once("C:/xampp/htdocs/sistema-academico-poo/dao/StudentDataAccessObjectMySql.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/dao/UserDataAccessObjectMySql.php");
 
 $name = filter_input(INPUT_POST, "studentName", FILTER_SANITIZE_SPECIAL_CHARS);
 $born_date = filter_input(INPUT_POST, "studentBornDate", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -19,7 +21,10 @@ if($name && $born_date && $rg && $cpf && $grade && $schooling && $period){
     for($i = 0; $i <= 4; $i++){
         $enrollment_register .= rand(0, 9);
     }
+
     $dao = new StudentDataAccessObjectMySql($connection);
+    $user_dao = new UserDataAccessObjectMySql($connection);
+
     if($dao->checkIfEnrollmentRegisterExists($enrollment_register)){
         while(!$dao->checkIfEnrollmentRegisterExists($enrollment_register)){
             for($i = 0; $i <= 4; $i++){
@@ -43,7 +48,20 @@ if($name && $born_date && $rg && $cpf && $grade && $schooling && $period){
     ]);
     $dao->create($student);
 
+    $user = new User();
+    $password = $user->generateDefaultPassword();
+    $user->setUserAttribute([
+        "id" => 0,
+        "name" => $name,
+        "email" => $email,
+        "password" => $password,
+        "access_level" => 1
+    ]);
+    $user_dao->create($user);
+
     $_SESSION["flash_session"] = "O registro de matrícula do aluno cadastrado é: " . $enrollment_register;
+    $_SESSION["password"] = "A senha padrão do aluno é: " . $password;
+
     header("Location:$base_url/student.php");
     exit;
 }

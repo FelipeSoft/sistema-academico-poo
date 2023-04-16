@@ -46,6 +46,7 @@ class Student{
                 $new_array[] = strtolower($element);
             }
         }
+
         for($i = 0; $i < count($new_array); $i++){
             $random_element = rand(0, 2);
             $chosen_names[] = $new_array[$random_element];

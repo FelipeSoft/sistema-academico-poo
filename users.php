@@ -10,7 +10,7 @@ $users = $dao->all();
 
 <main>
     <?php require("C:/xampp/htdocs/sistema-academico-poo/components/asideAdministrator.php"); ?>
-    <div class="container container-table">
+    <div class="container">
         <h3>Lista de Usuários</h3>
         <table id="usersTable">
             <thead>
@@ -32,7 +32,7 @@ $users = $dao->all();
                         <td><?= $user->getUserAttribute("password"); ?></td>
                         <td><?= $user->getUserAttribute("access_level"); ?></td>
                         <td>
-                            <div class="actions-user">
+                            <div class="actions">
                                 <a href="<?=$base_url;?>/edit_user.php">Editar <i class="fa fa-pencil"></i></a>
                                 <a href="<?=$base_url;?>/delete_user_action.php?id=<?=$user->getUserAttribute("id");?>">Excluir <i class="fa fa-trash"></i></a>
                             </div>    

@@ -13,6 +13,12 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
             }
             unset($_SESSION['flash_session']);
         ?>
+        <?php
+            if(isset($_SESSION['password'])){
+                require_once("C:/xampp/htdocs/sistema-academico-poo/components/message.php");
+            }
+            unset($_SESSION['password']);
+        ?>
         <h2 class="main-title">Novo Cadastro</h2>
         
         <form action="<?=$base_url?>/actions/student_action.php" method="POST">
@@ -20,7 +26,7 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                 <div class="student-area">
                     <div class="column-left-sa">
                         <label>
-                        Nome:
+                            Nome:
                         <input type="text" name="studentName">
                         </label>
                         <label>
@@ -66,12 +72,12 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                                 <option value="3">Noturno</option>
                                 <option value="4">Integral</option>
                             </select>
-                        </label>  
+                        </label>
                     </div>
                 </div>
                 <div class="button-area">
                     <button>Cadastrar Estudante</button>
-                    </div>
+                </div>
                 </form>
                 <form action="<?=$base_url?>/actions/guardian_action.php" method="POST">
                 <h3>Área do Responsável</h3>

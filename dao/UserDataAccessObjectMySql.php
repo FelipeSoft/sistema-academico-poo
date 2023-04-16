@@ -71,4 +71,10 @@ class UserDataAccessObjectMySql{
             die;
         }
     }
+
+    public function delete(int $id){
+        $sql = $this->pdo->prepare("DELETE FROM users WHERE id = :id");
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+    }
 }

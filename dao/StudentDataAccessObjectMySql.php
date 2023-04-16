@@ -65,4 +65,28 @@ class StudentDataAccessObjectMySql{
             exit;
         }
     }
+
+    public function all(){
+        $sql = $this->pdo->prepare("SELECT * FROM students");
+        $sql->execute();
+
+        if($sql->rowCount() > 0){
+            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
+            $result = [];
+
+            foreach($data as $d){
+                $student = new Student();
+                $student->setStudentAttribute($d);
+                $result[] = $student;
+            }
+
+            return $result;
+        }
+    }
+
+    public function delete(int $id){
+        $sql = $this->pdo->prepare("DELETE FROM students WHERE id = :id");
+        $sql->bindValue(":id", $id);
+        $sql->execute();
+    }
 }

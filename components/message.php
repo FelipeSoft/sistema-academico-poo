@@ -6,4 +6,11 @@
             }
         ?>
     </p>
+    <p>
+        <?php
+            if(isset($_SESSION['password'])){
+                echo $_SESSION['password'];
+            }
+        ?>
+    </p>
 </div>

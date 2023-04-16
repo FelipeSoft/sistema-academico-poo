@@ -19,3 +19,5 @@ $dao->create($user);
 
 header("Location:$base_url/login.php");
 exit;
+//senha aluno: cKvQ@/97
+//senha responsável: eMoK%.19
