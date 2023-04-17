@@ -25,4 +25,38 @@ class GuardianDataAccessObjectMySql{
             exit;
         }
     }
+
+    public function all( ){
+        try{
+            $sql = $this->pdo->prepare("SELECT * FROM guardians");
+            $sql->execute();
+
+            if($sql->rowCount() > 0){
+                $fetch = [];
+                $data = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach($data as $d){
+                    $guardian = new Guardian();
+                    $guardian->setGuardianAttribute([
+                        "id" => $d["id"],
+                        "name" => $d["name"],
+                        "email" => $d["email"],
+                        "cellphone" => $d["cellphone"],
+                        "tellphone" => $d["tellphone"],
+                        "born_date" => $d["born_date"],
+                        "rg" => $d["rg"],
+                        "cpf" => $d["cpf"],
+                        "frequency" => $d["frequency"],
+                        "payment" => $d["payment"],
+                        "student_id" => $d["student_id"],
+                    ]);
+
+                    $fetch[] = $guardian;
+                }
+                return $fetch;
+            }
+        } catch(PDOException $error){
+            echo $error->getMessage();
+        }
+    }
 }

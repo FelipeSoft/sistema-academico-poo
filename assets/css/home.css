@@ -156,20 +156,25 @@ div.message{
     color: #fff;
     margin-bottom: 20px;
 }
-table#usersTable{
+table#usersTable,
+table#guardiansTable{
     border-collapse: collapse;
     margin-top: 20px;
     width: max-content;
 }
-table#usersTable thead tr td{
+table#usersTable thead tr td,
+table#guardiansTable thead tr td{
     background-color: var(--high-color);
     color: #fff;
 }
-table#usersTable thead tr td{
+table#usersTable thead tr td,
+table#guardiansTable thead tr td{
     width: max-content;
 }
 table#usersTable thead tr td,
-table#usersTable tbody tr td{
+table#guardiansTable thead tr td,
+table#usersTable tbody tr td,
+table#guardiansTable tbody tr td{
     border: 1px solid var(--dark-color);
     text-align: center;
     padding: 7px 14px;

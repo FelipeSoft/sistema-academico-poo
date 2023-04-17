@@ -83,6 +83,7 @@ class StudentDataAccessObjectMySql{
 
                 return $result;
             }
+            return null;
         } catch (PDOException $error){
             echo $error->getMessage();
         }
