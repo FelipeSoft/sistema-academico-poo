@@ -67,26 +67,34 @@ class StudentDataAccessObjectMySql{
     }
 
     public function all(){
-        $sql = $this->pdo->prepare("SELECT * FROM students");
-        $sql->execute();
+        try{
+            $sql = $this->pdo->prepare("SELECT * FROM students");
+            $sql->execute();
 
-        if($sql->rowCount() > 0){
-            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
-            $result = [];
+            if($sql->rowCount() > 0){
+                $data = $sql->fetchAll(PDO::FETCH_ASSOC);
+                $result = [];
 
-            foreach($data as $d){
-                $student = new Student();
-                $student->setStudentAttribute($d);
-                $result[] = $student;
+                foreach($data as $d){
+                    $student = new Student();
+                    $student->setStudentAttribute($d);
+                    $result[] = $student;
+                }
+
+                return $result;
             }
-
-            return $result;
+        } catch (PDOException $error){
+            echo $error->getMessage();
         }
     }
 
     public function delete(int $id){
-        $sql = $this->pdo->prepare("DELETE FROM students WHERE id = :id");
-        $sql->bindValue(":id", $id);
-        $sql->execute();
+        try{
+            $sql = $this->pdo->prepare("DELETE FROM students WHERE id = :id");
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+        } catch (PDOException $error){
+            echo $error->getMessage();
+        }
     }
 }
