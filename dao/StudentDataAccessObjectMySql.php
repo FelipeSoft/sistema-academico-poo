@@ -96,6 +96,7 @@ class StudentDataAccessObjectMySql{
             $sql->execute();
         } catch (PDOException $error){
             echo $error->getMessage();
+            die;
         }
     }
 }

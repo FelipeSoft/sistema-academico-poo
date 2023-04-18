@@ -11,6 +11,11 @@ $users = $dao->all();
 <main>
     <?php require("C:/xampp/htdocs/sistema-academico-poo/components/asideAdministrator.php"); ?>
     <div class="container">
+        <?php 
+            if(isset($_SESSION['flash_session'])){
+                require($_SERVER['DOCUMENT_ROOT'] . "/sistema-academico-poo/components/message.php");
+            }
+        ?>
         <h3>Lista de Usuários</h3>
         <table id="usersTable">
             <thead>
@@ -34,7 +39,7 @@ $users = $dao->all();
                         <td>
                             <div class="actions">
                                 <a href="<?=$base_url;?>/edit_user.php">Editar <i class="fa fa-pencil"></i></a>
-                                <a href="<?=$base_url;?>/delete_user_action.php?id=<?=$user->getUserAttribute("id");?>">Excluir <i class="fa fa-trash"></i></a>
+                                <a href="<?=$base_url;?>/actions/delete_user_action.php?id=<?=$user->getUserAttribute("id");?>" onclick="return confirm('Deseja realmente excluir esse registro?')">Excluir <i class="fa fa-trash"></i></a>
                             </div>    
                         </td>
                     </tr>

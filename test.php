@@ -2,6 +2,10 @@
 require("C:/xampp/htdocs/sistema-academico-poo/config.php");
 require_once("C:/xampp/htdocs/sistema-academico-poo/models/User.php");
 require_once("C:/xampp/htdocs/sistema-academico-poo/dao/UserDataAccessObjectMySql.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/models/Student.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/dao/StudentDataAccessObjectMySql.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/models/Guardian.php");
+require_once("C:/xampp/htdocs/sistema-academico-poo/dao/GuardianDataAccessObjectMySql.php");
 
 $data = [
     "id" => 0,
@@ -19,5 +23,4 @@ $dao->create($user);
 
 header("Location:$base_url/login.php");
 exit;
-//senha aluno: cKvQ@/97
-//senha responsável: eMoK%.19
+

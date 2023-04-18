@@ -38,5 +38,6 @@ CREATE TABLE guardians(
     CONSTRAINT fk_guardians_student_id
     FOREIGN KEY (student_id)
     REFERENCES students (id)
+    ON DELETE CASCADE
 );
 

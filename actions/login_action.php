@@ -35,6 +35,7 @@ if($email && $password && $access){
     }
     
     if($auth->check()){    
+        $_SESSION['user_id'] = $logged_user->getUserAttribute("id"); 
         $_SESSION['logged_user'] = $first_name . " | " . $access_level; 
         header("Location:".$base_url."/");
         exit;

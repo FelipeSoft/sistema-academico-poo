@@ -12,6 +12,11 @@ $students = $dao->all();
 <main>
     <?php require("C:/xampp/htdocs/sistema-academico-poo/components/asideAdministrator.php"); ?>
     <div class="container">
+        <?php 
+            if(isset($_SESSION["flash_session"])){
+                require($_SERVER['DOCUMENT_ROOT'] . "/sistema-academico-poo/components/message.php");
+            } 
+        ?>
         <h3>Gerenciamento de Alunos</h3>
         <table id="usersTable">
             <thead>
@@ -79,7 +84,7 @@ $students = $dao->all();
                         <td>
                             <div class="actions">
                                 <a href="<?=$base_url;?>/edit_student.php">Editar <i class="fa fa-pencil"></i></a>
-                                <a href="<?=$base_url;?>/actions/delete_student_action.php?id=<?=$student->getStudentAttribute("id");?>">Excluir <i class="fa fa-trash"></i></a>
+                                <a href="<?=$base_url;?>/actions/delete_student_action.php?id=<?=$student->getStudentAttribute("id");?>" onclick="return confirm('Deseja realmente excluir esse registro?');">Excluir <i class="fa fa-trash"></i></a>
                             </div>
                         </td>
                     </tr>

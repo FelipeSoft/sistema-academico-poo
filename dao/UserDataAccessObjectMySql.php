@@ -77,4 +77,8 @@ class UserDataAccessObjectMySql{
         $sql->bindValue(":id", $id);
         $sql->execute();
     }
+
+    public function getUserByName($name){
+        
+    }
 }

@@ -11,6 +11,11 @@ $guardians = $dao->all();
 <main>
     <?php require("C:/xampp/htdocs/sistema-academico-poo/components/asideAdministrator.php"); ?>
     <div class="container">
+        <?php 
+            if(isset($_SESSION["flash_session"])){
+                require($_SERVER['DOCUMENT_ROOT'] . "/sistema-academico-poo/components/message.php");
+            } 
+        ?>
         <h3>Lista de Responsáveis</h3>
         <table id="guardiansTable">
             <thead>
