@@ -28,37 +28,42 @@ if($name && $email && $born_date && $rg && $cpf && $cellphone && $rm && $payment
         $student = $student_dao->getStudentByEnrollmentRegister($rm);
         $student_id = $student->getStudentAttribute("id");
 
-        $guardian = new Guardian();
-        $guardian->setGuardianAttribute([
-            "id" => 0,
-            "name" => $name,
-            "email" => $email,
-            "born_date" => $born_date,
-            "rg" => $rg,
-            "cpf" => $cpf,
-            "cellphone" => $cellphone,
-            "tellphone" => $tellphone,
-            "rm" => $rm,
-            "payment" => $payment,
-            "frequency" => $frequency,
-            "student_id" => $student_id
-        ]);
-        $guardian_dao->create($guardian);
+        if(!$user_dao->checkIfEmailExists($email)){
+            $guardian = new Guardian();
+            $guardian->setGuardianAttribute([
+                "id" => 0,
+                "name" => $name,
+                "email" => $email,
+                "born_date" => $born_date,
+                "rg" => $rg,
+                "cpf" => $cpf,
+                "cellphone" => $cellphone,
+                "tellphone" => $tellphone,
+                "rm" => $rm,
+                "payment" => $payment,
+                "frequency" => $frequency,
+                "student_id" => $student_id
+            ]);
+            $guardian_dao->create($guardian);
 
-        $user = new User();
-        $password = $user->generateDefaultPassword();
-        $user->setUserAttribute([
-            "id" => 0,
-            "name" => $name,
-            "email" => $email,
-            "password" => $password,
-            "access_level" => 1
-        ]);
-        $user_dao->create($user);
+            $user = new User();
+            $password = $user->generateDefaultPassword();
+            $user->setUserAttribute([
+                "id" => 0,
+                "name" => $name,
+                "email" => $email,
+                "password" => $password,
+                "access_level" => 1
+            ]);
+            $user_dao->create($user);
 
-        $_SESSION['flash_session'] = "Aluno e responsável cadastrados com sucesso!";
-        $_SESSION['password'] = "A senha padrão do responsável é: " . $password;
+            $_SESSION['flash_session'] = "Aluno e responsável cadastrados com sucesso!";
+            $_SESSION['password'] = "A senha padrão do responsável é: " . $password;
 
+            header("Location:$base_url/student.php");
+            exit;
+        }
+        $_SESSION['flash_session'] = "O email do responsável informado já está em uso!";
         header("Location:$base_url/student.php");
         exit;
     }

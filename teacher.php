@@ -22,19 +22,27 @@ require("C:/xampp/htdocs/sistema-academico-poo/components/header.php");
                         </label>
                         <label>
                             RG:
-                            <input type="text" name="teacher">
+                            <input type="text" name="teacherRG">
                         </label>
                         <label>
                             CPF:
-                            <input type="text" name="">
+                            <input type="text" name="teacherCPF">
+                        </label>
+                    </div>
+                    <div class="column-right-sa" name="teacherEducation">
+                        <label>
+                        <label>
+                            Celular:
+                            <input type="text" name="teacherCellphone">
+                        </label>
+                        <label>
+                            Telefone:
+                            <input type="text" name="teacherTellphone">
                         </label>
                         <label>
                             Salário
-                            <input type="text" name="">
+                            <input type="text" name="teacherWage">
                         </label>
-                    </div>
-                    <div class="column-right-sa" name="">
-                        <label>
                             Escolaridade:
                             <select name="schooling">
                                 <option value="1">Ensino Fundamental I</option>

@@ -81,4 +81,11 @@ class UserDataAccessObjectMySql{
     public function getUserByName($name){
         
     }
+
+    public function checkIfEmailExists(string $email){
+        $sql = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
+        $sql->bindValue(":email", $email);
+        $sql->execute();
+        return $sql->rowCount() > 0 ? true : false;
+    }
 }

@@ -16,8 +16,9 @@ class Auth{
     public function check(){
         $dao = new UserDataAccessObjectMySql($this->pdo);
         $user_access = $dao->getUserByAuthorization($this->email, $this->access);
+        $email_exists = $dao->checkIfEmailExists($this->email);
 
-        if($user_access !== null){
+        if($user_access !== null && $email_exists){
             return (password_verify($this->password, $user_access->getUserAttribute("password"))) ? true : false;  
         }
         return false;

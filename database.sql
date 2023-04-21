@@ -41,3 +41,15 @@ CREATE TABLE guardians(
     ON DELETE CASCADE
 );
 
+CREATE TABLE teachers(
+    `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `cpf` VARCHAR(20) NOT NULL,
+    `rg` VARCHAR(20) NOT NULL,
+    `cellphone` VARCHAR(20) NOT NULL,
+    `tellphone` VARCHAR(20) NULL,
+    `born_date` VARCHAR(10) NOT NULL,
+    `wage` FLOAT NOT NULL,
+    `education` TEXT NOT NULL
+);
